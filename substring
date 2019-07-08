@@ -25,5 +25,7 @@ def max_char(string,n):
 string=input()
 result=smallest_substring(string)
 print(result)
+
+
             
 
