@@ -1,1 +1,29 @@
-hjg
+def smallest_substring(string):
+    n=len(string)
+    max_distinct=max_char(string,n)
+    value=n
+    for i in range(n):
+        for j in range(n):
+            substring=string[i:j]
+            substr_length=len(substring)
+            distinct_char= max_char(substring,substr_length)
+            if (substr_length<value and max_distinct==distinct_char):
+                val=substr_length
+    return val
+def max_char(string,n):
+    char_hash=[0]*123
+    for i in range(n):
+        char_hash[ord(string[i])]+=1
+    max_distinct_char=0
+    for i in range(123):
+        if(char_hash[i] !=0):
+            max_distinct_char+=1
+    return max_distinct_char
+
+
+
+string=input()
+result=smallest_substring(string)
+print(result)
+            
+
